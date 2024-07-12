@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "4d4e9f29-fe12-474f-8e77-2c39520c87e6",
+		"name": "Project Management Assignment",
+		"description": "API collection for Project Management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21769414"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mihil Malaviya\",\n    \"email\": \"mihil@gmail.com\",\n    \"password\": \"12345678\",\n    \"role\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQwZWZkNWIxMWU4OTdmMzNkN2EwIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NTM3NiwiZXhwIjoxNzIxMTU1Mzc2fQ.S2j5th1qFI6wHCeMy8MXs_AFC9WslC6L0JPVWOjRS3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mihil@gmail.com\",\n    \"password\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New Project\",\n    \"description\": \"Project description\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-12-31\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated\",\n    \"description\": \"Updated\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-10-31\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/projects/669147e4fde53bb652e99e95",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"669147e4fde53bb652e99e95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/projects/669147e4fde53bb652e99e95",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								"669147e4fde53bb652e99e95"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"New task\",\n    \"description\": \"description\",\n    \"dueDate\": \"2024-07-30\",\n    \"priority\": \"high\",\n    \"projectId\": \"66914e40b84771f05a36cba2\",\n    \"assignedTo\": \"6691458c587e52f326bfef56\",\n    \"dependencies\": [\"66914e97b84771f05a36cba5\", \"66914e9eb84771f05a36cba8\"]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/tasks/669149205f86565ec7c47e44",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"669149205f86565ec7c47e44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTUxOGJlOTMwMWU1MGI1ZGUyMzdiIiwicm9sZSI6InRlYW1fbWVtYmVyIn0sImlhdCI6MTcyMDc5OTYyNywiZXhwIjoxNzIxMTU5NjI3fQ.Ai9dF6bKwlVc-iBqWZczCD5ukYbqNRziboSkKfT4cmc"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated dependencies\",\n    \"description\": \"Updated description\",\n    \"dueDate\": \"2024-07-20\",\n    \"priority\": \"medium\",\n    \"assignedTo\": \"6691458c587e52f326bfef56\",\n    \"dependencies\": [\"66915000b84771f05a36cbb1\", \"66915012b84771f05a36cbb4\"]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tasks/66914ed6b84771f05a36cbab",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"66914ed6b84771f05a36cbab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MTQ1OGM1ODdlNTJmMzI2YmZlZjU2Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTcyMDc5NjU1NywiZXhwIjoxNzIxMTU2NTU3fQ.Q7PQQFaCP3NlCjjpJ3brCWYhfphKoSfYJHUGn-IyA9s"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/tasks/669149c75f86565ec7c47e4d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"669149c75f86565ec7c47e4d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "projectId",
+			"value": ""
+		},
+		{
+			"key": "taskId",
+			"value": ""
+		},
+		{
+			"key": "userId",
+			"value": ""
+		}
+	]
+}
